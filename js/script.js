@@ -31,8 +31,44 @@ const titleClickHandler = function(event) {
     targetArticle.classList.add('active');
 };
 
-const links = document.querySelectorAll('.titles a');
 
-for (let link of links) {
-	link.addEventListener('click', titleClickHandler);
+
+
+function generateTitleLinks() {
+    const   optArticleSelector = ".post",
+            optTitleSelector = ".post-title",
+            optTitleListSelector = ".titles";
+
+    /* Remove links of titlelist */
+
+    document.querySelector(optTitleListSelector).innerHTML="";
+
+    /* For each Article:
+    - get the Article ID
+    - find the title element
+    - get the title form title element
+    - create HTML of the link 
+    - insert link into titleList
+    */
+
+    const articles = document.querySelectorAll(optArticleSelector)
+
+    for (let article of articles) {
+        const articleId = article.getAttribute('id');
+        const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+
+        let li = document.createElement('li');
+        li.innerHTML = "<a href='#"+articleId+"'><span>"+articleTitle+"</span></a>";
+	    document.querySelector('.titles').appendChild(li);
+    }
+
+    const links = document.querySelectorAll('.titles a');
+  
+    
+    for (let link of links) {
+        link.addEventListener('click', titleClickHandler);
+    }
 }
+
+generateTitleLinks();
+
