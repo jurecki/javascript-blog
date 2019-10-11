@@ -104,14 +104,16 @@ body {
 /* Post */
 
 .post {
-  transition: all 2s ease;
-  opacity: 0;
-
+  transition: all 1s ease;
+  opacity: 0;    
+  position: absolute;
+  top: 40px;
+  
+  
   &.active { 
     opacity: 1;
-    position: absolute;
-    top: 40px;
     z-index:1;
+  
   }
 }
 
