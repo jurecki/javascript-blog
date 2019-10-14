@@ -1,6 +1,6 @@
 const titleClickHandler = function(event) {
-    event.preventDefault();
-    const clickedElement = this;
+	event.preventDefault();
+	const clickedElement = this;
 
 	/* remove class 'active' form all article links */
 	const activeLinks = document.querySelectorAll('.titles a.active');
@@ -9,41 +9,37 @@ const titleClickHandler = function(event) {
 		activeLink.classList.remove('active');
 	}
 
-    /* add class 'active' to the clicked link */
-    
-    clickedElement.classList.add('active')
+	/* add class 'active' to the clicked link */
 
-    /* remove class 'active' form all article */
-    const activeArticles = document.querySelectorAll('.post');
+	clickedElement.classList.add('active');
 
-    for (let activeArticle of activeArticles) {
-        activeArticle.classList.remove('active');
-    }
+	/* remove class 'active' form all article */
+	const activeArticles = document.querySelectorAll('.post');
 
-    /* get href attribut form the clicked link */
-    const articleSelector = clickedElement.getAttribute('href')
+	for (let activeArticle of activeArticles) {
+		activeArticle.classList.remove('active');
+	}
+
+	/* get href attribut form the clicked link */
+	const articleSelector = clickedElement.getAttribute('href');
 
 	/* find the correct article using the selector  (value of 'href' attribute) */
-    const targetArticle = document.querySelector(articleSelector);
+	const targetArticle = document.querySelector(articleSelector);
 
-
-    /* add class 'active' to the correct article */
-    targetArticle.classList.add('active');
+	/* add class 'active' to the correct article */
+	targetArticle.classList.add('active');
 };
 
-
-
-
 function generateTitleLinks() {
-    const   optArticleSelector = ".post",
-            optTitleSelector = ".post-title",
-            optTitleListSelector = ".titles";
+	const optArticleSelector = '.post',
+		optTitleSelector = '.post-title',
+		optTitleListSelector = '.titles';
 
-    /* Remove links of titlelist */
+	/* Remove links of titlelist */
 
-    document.querySelector(optTitleListSelector).innerHTML="";
+	document.querySelector(optTitleListSelector).innerHTML = '';
 
-    /* For each Article:
+	/* For each Article:
     - get the Article ID
     - find the title element
     - get the title form title element
@@ -51,40 +47,39 @@ function generateTitleLinks() {
     - insert link into titleList
     */
 
-    const articles = document.querySelectorAll(optArticleSelector)
+	const articles = document.querySelectorAll(optArticleSelector);
 
-    for (let article of articles) {
-        const articleId = article.getAttribute('id');
-        const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+	for (let article of articles) {
+		const articleId = article.getAttribute('id');
+		const articleTitle = article.querySelector(optTitleSelector).innerHTML;
 
-        let li = document.createElement('li');
-        li.innerHTML = "<a href='#"+articleId+"'><span>"+articleTitle+"</span></a>";
-	    document.querySelector('.titles').appendChild(li);
-    }
+		let li = document.createElement('li');
+		li.innerHTML = "<a href='#" + articleId + "'><span>" + articleTitle + '</span></a>';
+		document.querySelector('.titles').appendChild(li);
+	}
 
-    const links = document.querySelectorAll('.titles a');
-  
-    
-    for (let link of links) {
-        link.addEventListener('click', titleClickHandler);
-    }
+	const links = document.querySelectorAll('.titles a');
+
+	for (let link of links) {
+		link.addEventListener('click', titleClickHandler);
+	}
 }
 
 generateTitleLinks();
 
 function getDivHeight() {
-    let maxHeightDiv = 0
+	let maxHeightDiv = 0;
 
-    for (let i=1; i<=10; i++) {
-        let heightDiv = document.getElementById('article-'+i).clientHeight;
-        
-        if(maxHeightDiv<heightDiv) {
-            maxHeightDiv=heightDiv;
-        }
-    }
-    console.log(maxHeightDiv);
-    
-    document.getElementById('maxHeightDiv').style.height = maxHeightDiv+100+"px";
+	for (let i = 1; i <= 10; i++) {
+		let heightDiv = document.getElementById('article-' + i).clientHeight;
+
+		if (maxHeightDiv < heightDiv) {
+			maxHeightDiv = heightDiv;
+		}
+	}
+	console.log(maxHeightDiv);
+
+	document.getElementById('maxHeightDiv').style.height = maxHeightDiv + 100 + 'px';
 }
 
 getDivHeight();

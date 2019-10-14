@@ -1,138 +1,140 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext");
 /* Variables */
 /* Global */
-*, *::before, *::after {
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background: #fff;
-  font-family: "Source Sans Pro", sans-serif;
-  color: #444;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 1.7;
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	font-family: "Source Sans Pro", sans-serif;
+	color: #444;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 1.7;
 }
 
 .container {
-  max-width: 100%;
+	max-width: 100%;
 }
 
 .section-title {
-  font-size: 22px;
-  text-transform: uppercase;
-  font-family: "Oswald", sans-serif;
-  font-weight: 200;
-  margin-right: 30px;
-  color: white;
+	font-size: 22px;
+	text-transform: uppercase;
+	font-family: "Oswald", sans-serif;
+	font-weight: 200;
+	margin-right: 30px;
+	color: white;
 }
 
 .section-title span {
-  text-transform: none;
-  font-weight: 400;
-  color: #777777;
+	text-transform: none;
+	font-weight: 400;
+	color: #777777;
 }
 
 /* Layout */
 .wrapper {
-  display: -ms-flexbox;
-  display: flex;
+	display: -ms-flexbox;
+	display: flex;
 }
 
 .sidebar {
-  -ms-flex-positive: 1;
-      flex-grow: 1;
-  background-color: #2bcbba;
-  text-align: right;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	background-color: #2bcbba;
+	text-align: right;
 }
 
 .posts {
-  -ms-flex-positive: 10;
-      flex-grow: 10;
-  position: relative;
-  background-color: #d1d8e0;
+	-ms-flex-positive: 10;
+	flex-grow: 10;
+	position: relative;
+	background-color: #d1d8e0;
 }
 
 /* Logo */
 .logo {
-  font-family: "Sacramento", cursive;
-  font-weight: 400;
-  font-size: 60px;
-  line-height: 1;
-  text-align: center;
-  color: white;
-  position: relative;
+	font-family: "Sacramento", cursive;
+	font-weight: 400;
+	font-size: 60px;
+	line-height: 1;
+	text-align: center;
+	color: white;
+	position: relative;
 }
 
 .logo::after {
-  content: "";
-  position: absolute;
-  height: 3px;
-  width: 70%;
-  left: 50%;
-  bottom: -24px;
-  transform: translateX(-50%);
-  background-color: white;
+	content: "";
+	position: absolute;
+	height: 3px;
+	width: 70%;
+	left: 50%;
+	bottom: -24px;
+	transform: translateX(-50%);
+	background-color: white;
 }
 
 /* Lists */
 .list {
-  list-style-type: none;
-  margin-right: 30px;
-  padding: 0;
+	list-style-type: none;
+	margin-right: 30px;
+	padding: 0;
 }
 
 .list .active {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .list-horizontal li {
-  display: inline-block;
+	display: inline-block;
 }
 
 /* Authors */
 .authors li {
-  margin-bottom: 12px;
+	margin-bottom: 12px;
 }
 
 /* Post */
 .post {
-  transition: all 1s ease;
-  opacity: 0;
-  position: absolute;
-  margin: 20px 100px;
-  top: 40px;
-  background-color: white;
+	transition: all 1s ease;
+	opacity: 0;
+	position: absolute;
+	margin: 20px 100px;
+	top: 40px;
+	background-color: white;
 }
 
 .post.active {
-  opacity: 1;
-  z-index: 1;
+	opacity: 1;
+	z-index: 1;
 }
 
 .post-img img {
-  width: 100%;
-  height: 300px;
-  -o-object-fit: cover;
-     object-fit: cover;
+	width: 100%;
+	height: 300px;
+	-o-object-fit: cover;
+	object-fit: cover;
 }
 
 .post-inner {
-  padding: 0 50px;
+	padding: 0 50px;
 }
 
 .post-author {
-  font-style: italic;
+	font-style: italic;
 }
 
 .post-tags {
-  display: -ms-flexbox;
-  display: flex;
+	display: -ms-flexbox;
+	display: flex;
 }
 
 .post-tags p {
-  margin: 0 10px 0 0;
+	margin: 0 10px 0 0;
 }
 /*# sourceMappingURL=style.css.map */
